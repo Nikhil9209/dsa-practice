@@ -1,24 +1,26 @@
+// Use two pointers  
+// gfg 
+
 #include<bits/stdc++.h>
 using namespace std;
-vector<int>leader(vector<int>arr,int n ){
-    vector<int> ans;
-    ans.push_back(arr[n-1]);
-    for(int i =n-2 ; i>=0;i--){
-        if(arr[i]>){
-            ans.push_back(arr[i-1]);
-            mpp[arr[i-1]]++;
+vector<int> leaders(vector<int>& arr) {
+        // code here
+        vector<int>ans;
+        int n = arr.size();
+        int maxi =arr[n-1];
+        ans.push_back(maxi);
+        for(int i = n-2; i>=0; i--){
+            
+            
+            if(arr[i]>= maxi ){
+                maxi  = arr[i];
+                ans.push_back(maxi);
+            }
         }
+        reverse(ans.begin(), ans.end());
+        return ans ;
     }
-    return ans ;
-
-}
 int main(){
-    int n ;
-    cin>>n ;
-    vector<int>arr(n);
-    for(int i =0 ;i<n ;i++){
-        cin>>arr[i];
-    }
-   cout<< leader(arr,n);
+    return 0;
     
 }
