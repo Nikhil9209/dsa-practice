@@ -23,7 +23,7 @@ class Node{
 
 };
 
-Node*insertatHead(Node*head,int val){
+Node*beforeHead(Node*head,int val){
     Node*temp = new Node(val,head,nullptr);
     head->prev = temp;
     return head;
